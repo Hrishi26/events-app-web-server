@@ -48,6 +48,23 @@
             </div>
         </div>
         <div>
+            <div>
+                <label for="location">Location:</label>
+            </div>
+            <div>
+                <input id="location" name="location" type="text" placeholder="Event Location"/>
+            </div>
+        </div>
+        <div class="input-group.date">
+            <div>
+                <label for="event-date">Event Date:</label>
+            </div>
+            <div>
+                <input id="event-date" name="date" type="text" placeholder="Event Date"/>
+            </div>
+        </div>
+
+        <div>
             <input type="submit" name="submit" value="submit" />
         </div>
     </form>
@@ -56,6 +73,7 @@
 <script>
     $('.like-button').on('click', (event => {$.post(`/event/like/${event.target.value}`, () => {location.reload()})}));
     $('.dislike-button').on('click', (event => {$.post(`/event/dislike/${event.target.value}`, () => {location.reload()})}));
+    $('#event-date').datepicker();
 </script>
 
 
